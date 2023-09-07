@@ -10,7 +10,7 @@ def find_winner(first, second):
     elif 2 > summ > 0 or summ == -2:
         return "игрок 2 выиграл"
     else:
-        return words[0]
+        return
 
 
 print(find_winner(first_player, second_player))
