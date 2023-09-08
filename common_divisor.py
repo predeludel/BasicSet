@@ -1,8 +1,3 @@
-# from typing import TypeAlias
-#
-# IntOrNone: TypeAlias = int | None
-
-
 def common_divisor(first, second) -> int:
     flag = 0
     while flag == 0:
@@ -18,4 +13,5 @@ def common_divisor(first, second) -> int:
 
 
 first, second = int((input('Введите первое число: '))), int((input('Введите первое число: ')))
+first, second = max(first, second), min(first, second)
 print(f"Наибольший общий делитель: {common_divisor(first, second)}")
