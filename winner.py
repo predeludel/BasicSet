@@ -11,11 +11,15 @@ for team in RACE_DATA:
             winners.update({value.get('FinishedPlace'):
                                 value})
             break
-
+wine = winners.get(1)
+print(f'Выиграл - {wine.get("RacerName")}!!! Поздравляем!!')
+print(f'_______________________________')
+print(f'Первые три места:\n')
 for i in dict(sorted(winners.items())):
     value = winners.get(i)
     time = str(datetime.timedelta(seconds=int(value.get('FinishedTimeSeconds'))))
-    print(f'\tГонщик на {i} метсте')
+
+    print(f'Гонщик на {i} метсте')
     print(f"\t\tИмя: {value.get('RacerName')}")
     print(f"\t\tКоманда: {value.get('RacerTeam')}")
     print(f"\t\tВремя: {time}\n")
