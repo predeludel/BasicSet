@@ -1,8 +1,8 @@
-from import_this import RACE_DATA
+from import_this import (generate_race_data, RaceInfo)
 import datetime
 from typing import TypeAlias
 
-RACE_DATA = RACE_DATA
+RACE_DATA: RaceInfo = generate_race_data(10)
 FinishedPlace: TypeAlias = int
 FinishedTimeSeconds: TypeAlias = str | int | float
 RacerName: TypeAlias = str
@@ -14,7 +14,7 @@ RacerInfo: TypeAlias = dict[
 WINNERS: dict[int, RacerInfo] = {}
 
 
-def get_array(race_data) -> dict:
+def get_array(race_data: dict) -> dict:
     for team in race_data:
         value = race_data.get(team)
         for i in value:
@@ -24,10 +24,10 @@ def get_array(race_data) -> dict:
     return WINNERS
 
 
-def get_text():
+def get_text() -> None:
     wine = WINNERS.get(1)
     print(f'Выиграл - {wine.get("RacerName")}!!! Поздравляем!!')
-    print(f'_______________________________')
+    print('_' * (27 + (len(wine.get('RacerName')))))
     print(f'Первые три места:\n')
     for i in dict(sorted(WINNERS.items())):
         value = WINNERS.get(i)
