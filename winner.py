@@ -22,4 +22,4 @@ for i in dict(sorted(winners.items())):
     print(f'Гонщик на {i} метсте')
     print(f"\t\tИмя: {value.get('RacerName')}")
     print(f"\t\tКоманда: {value.get('RacerTeam')}")
-    print(f"\t\tВремя: {time}\n")
+    print(f"\t\tВремя: {time} (H:M:S)\n ")
