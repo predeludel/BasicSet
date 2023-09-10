@@ -2,13 +2,13 @@ def common_divisor(first, second) -> int:
     flag = 0
     while flag == 0:
         subtraction = first - second
-        if subtraction > second:
-            while subtraction > second:
-                subtraction = first - second
-                first = subtraction
-        if subtraction == 0:
+        if subtraction < second:
+            first, second = second, subtraction
+        elif subtraction > second:
+            first, second = subtraction, second
+        else:
             flag = second
-        first, second = second, subtraction
+
     return flag
 
 
